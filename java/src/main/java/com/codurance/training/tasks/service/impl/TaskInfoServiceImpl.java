@@ -12,7 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskInfoServiceImpl extends TaskData implements TaskInfoService {
-    private TaskUtil taskUtil = new TaskUtil();
+    private TaskUtil taskUtil;
+
+    public TaskInfoServiceImpl() {
+        taskUtil = new TaskUtil();
+    }
+
     public void show(PrintWriter out) {
         for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
             out.println(project.getKey());

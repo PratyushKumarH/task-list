@@ -11,7 +11,11 @@ import java.util.*;
 
 public class TaskServiceImpl extends TaskData implements TaskService {
 
-    private TaskUtil taskUtil = new TaskUtil();
+    public TaskServiceImpl() {
+        this.taskUtil = taskUtil;
+    }
+
+    private TaskUtil taskUtil;
     public void add(PrintWriter out, String commandLine) {
         String[] subcommandRest = commandLine.split(" ", 2);
         String subcommand = subcommandRest[0];

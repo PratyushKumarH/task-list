@@ -9,8 +9,14 @@ import java.io.PrintWriter;
 
 class TaskHandler {
 
-    private final TaskService taskService = new TaskServiceImpl();
-    private final TaskInfoService taskInfoService = new TaskInfoServiceImpl();
+
+    private final TaskService taskService;
+    private final TaskInfoService taskInfoService;
+
+    public TaskHandler() {
+        this.taskService = new TaskServiceImpl();
+        this.taskInfoService = new TaskInfoServiceImpl();
+    }
     public void execute(String commandLine, PrintWriter out) {
         String[] commandRest = commandLine.split(" ", 2);
         String command = commandRest[0];

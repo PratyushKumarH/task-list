@@ -6,9 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskData {
-    public Map<String, List<Task>> tasks = new LinkedHashMap<>();
-    public long lastId = 0;
+    public Map<String, List<Task>> tasks;
+    public long lastId;
 
-    public PrintWriter out = new PrintWriter(System.out);
+    public PrintWriter out;
 
+    public TaskData() {
+        out = new PrintWriter(System.out);
+        tasks = new LinkedHashMap<>();
+        lastId = 0;
+    }
 }
